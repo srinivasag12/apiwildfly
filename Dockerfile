@@ -20,7 +20,7 @@ RUN yum install java-1.8.0-devel -y
 
 RUN mvn clean install
 
-COPY ./target/iri_file_upload-0.1.war /opt/jboss/wildfly/standalone/deployments/
+COPY target/iri_file_upload-0.1.war /opt/jboss/wildfly/standalone/deployments/
 
 EXPOSE 8181
 
