@@ -24,4 +24,4 @@ COPY ./target/iri_file_upload-0.1.war /opt/jboss/wildfly/standalone/deployments/
 
 EXPOSE 8181
 
-CMD ["/opt/jboss/wildfly/bin/standalone.sh"]
+CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
