@@ -1,0 +1,52 @@
+{
+    "family": "msc-api-taskdef",
+    "containerDefinitions": [
+        {
+            "name": "c1",
+            "image": "014025535279.dkr.ecr.us-east-1.amazonaws.com/apirepo",
+            "cpu": 0,
+            "portMappings": [
+                {
+                    "name": "c1-80-tcp",
+                    "containerPort": 80,
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                },
+                {
+                    "name": "c1-8181-tcp",
+                    "containerPort": 8181,
+                    "hostPort": 8181,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-create-group": "true",
+                    "awslogs-group": "/ecs/msc-api-taskdef",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                }
+            }
+        }
+    ],
+    "executionRoleArn": "arn:aws:iam::014025535279:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "2048",
+    "memory": "4096",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    }
+}
