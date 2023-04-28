@@ -1,4 +1,4 @@
-FROM jboss/wildfly:25.0.1.Final
+FROM jboss/wildfly:25.0.0.Final
 
 WORKDIR /usr/src/app
 
