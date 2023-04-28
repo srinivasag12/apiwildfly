@@ -1,8 +1,8 @@
-FROM jboss/wildfly:25.0.0.Final
+FROM jboss/wildfly:26.1.1.Final
 
 WORKDIR /usr/src/app
 
-COPY pom*.xml ./
+COPY pom.xml ./
 
 COPY . .
 
@@ -20,8 +20,10 @@ RUN yum install java-1.8.0-devel -y
 
 RUN mvn clean install
 
+RUN chown 777 iri_file_upload-0.1.war
+
 RUN cp ./target/iri_file_upload-0.1.war /opt/jboss/wildfly/standalone/deployments/
 
-EXPOSE 8080
+EXPOSE 8181
 
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
