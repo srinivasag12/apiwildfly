@@ -22,6 +22,6 @@ RUN mvn clean install
 
 RUN cp ./target/iri_file_upload-0.1.war /opt/jboss/wildfly/standalone/deployments/
 
-EXPOSE 8181
+EXPOSE 8080
 
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
