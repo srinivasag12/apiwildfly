@@ -1,18 +1,11 @@
 {
-    "family": "msc-api-taskdef",
+    "family": "Backend",
     "containerDefinitions": [
         {
             "name": "c1",
             "image": "014025535279.dkr.ecr.us-east-1.amazonaws.com/apirepo",
             "cpu": 0,
             "portMappings": [
-                {
-                    "name": "c1-80-tcp",
-                    "containerPort": 80,
-                    "hostPort": 80,
-                    "protocol": "tcp",
-                    "appProtocol": "http"
-                },
                 {
                     "name": "c1-8181-tcp",
                     "containerPort": 8181,
@@ -30,8 +23,8 @@
             "logConfiguration": {
                 "logDriver": "awslogs",
                 "options": {
+                    "awslogs-group": "/ecs/Backend",
                     "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/msc-api-taskdef",
                     "awslogs-region": "us-east-1",
                     "awslogs-stream-prefix": "ecs"
                 }
