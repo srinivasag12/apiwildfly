@@ -22,7 +22,7 @@ RUN mvn clean install
 
 WORKDIR /usr/src/app/target
 
-ADD ./target/iri_file_upload-0.1.war /opt/jboss/wildfly/standalone/deployments/
+RUN cp ./target/iri_file_upload-0.1.war /opt/jboss/wildfly/standalone/deployments/
 
 EXPOSE 8181
 
