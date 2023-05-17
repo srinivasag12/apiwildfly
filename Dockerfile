@@ -24,6 +24,6 @@ WORKDIR /usr/src/app/target
 
 RUN cp iri_file_upload-0.1.war /opt/jboss/wildfly/standalone/deployments/
 
-EXPOSE 8181
+EXPOSE 8181 443
 
 CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0"]
